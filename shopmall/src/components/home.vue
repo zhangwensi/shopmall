@@ -8,8 +8,8 @@
   			<div>等级  </div>
   		</div>
   	</div>
-  	<div class="context">dsdas
-  		<router-view/>	
+  	<div class="context">
+  		<router-view></router-view>
   	</div>
   	<div class="footer">
   		<p>南京小米科技有限公司@LGT.LOG</p>
@@ -29,7 +29,7 @@ export default {
 </script>
 
 
-<style scoped>
+<style>
 .layout {
 	height: 100%;
 }

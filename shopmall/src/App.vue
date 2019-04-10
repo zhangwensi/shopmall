@@ -1,23 +1,24 @@
 <template>
-  <div id="app">
-    <router-view/>
-  </div>
+    <div id="app">
+        <router-view></router-view>
+    </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+    name: 'App'
 }
 </script>
 
 <style>
-html, body {
-  height: 100%;
-  min-height: 100%;
-  margin: 0px;
+html, body{
+    height: 100%;
+    min-height: 100%;
+    padding: 0px;
+    margin: 0px;
 }
-body>div {
-  height: 100%;
-  min-height: 100%;
+body>div{
+    height: 100%;
+    min-height: 100%;
 }
 </style>

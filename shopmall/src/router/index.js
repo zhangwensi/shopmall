@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/home'
 import Login from '@/components/Login'
+import centext from '@/pages/centext'
 
 Vue.use(Router)
 
@@ -15,7 +16,10 @@ export default new Router({
     {
       path: '/home',
       name: 'home',
-      component: Home
+      component: Home,
+      children: [
+            { path: '/home/centext', component: centext, name: 'centext' }
+        ]
     }
   ]
 })
