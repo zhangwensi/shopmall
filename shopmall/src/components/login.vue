@@ -19,7 +19,7 @@ export default {
 	},
 	methods:{
 		sginin () {
-			this.$router.push({path:'/home/centext'})
+			this.$router.push({path:'/centext'})
 		}
 	}
 }	

@@ -18,7 +18,7 @@ export default new Router({
       name: 'home',
       component: Home,
       children: [
-            { path: '/home/centext', component: centext, name: 'centext' }
+            { path: '/centext', component: centext, name: 'centext' }
         ]
     }
   ]

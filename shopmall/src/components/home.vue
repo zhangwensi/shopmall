@@ -38,6 +38,9 @@ export default {
 	width: 100%;
 	height:50px;
 	color: #fff;
+  top: 0px; 
+  position: fixed;
+  z-index: 10;
 }
 .footer {
 	background: #909399;
