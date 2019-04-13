@@ -2,24 +2,24 @@
 	<div class="centext">
 		<div class="leftside">
 			<div class="leftsidetop">
-				<p>title</p>
-				<ul>
-					<li>title1</li>
-					<li>title2</li>
-				</ul>
+				<div v-for='product in Pdlist'>
+					<p>{{product.title}}</p>
+					<ul>
+						<li v-for='item in product.list'>
+							<a href="#">{{item.name}}</a>
+						</li>
+					</ul>
+				</div>
 			</div>
-			<div class="leftsidetop">
-				<p>title</p>
+			<div class="leftsidebutton">
+				<p>消息大全</p>
 				<ul>
-					<li>title1</li>
-					<li>title2</li>
-				</ul>
-			</div>
-			<div class="leftsidetop">
-				<p>title</p>
-				<ul>
-					<li>title1</li>
-					<li>title2</li>
+					<li v-for='item in MessageList'>
+						<a href="#">
+							{{item.mt}}
+							<el-button type="danger" size="mini" :loading="true" v-show='item.hot'>hot</el-button>
+						</a>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -39,7 +39,47 @@ export default {
 	name:"centext",
 	data () {
 		return {
-			message:'dasdsad'
+			Pdlist: {
+					pc: {
+						title: '电子产品',
+						list: [
+							{
+								name: '手机',
+								url: 'dsdsdsd'
+							},
+							{
+								name: 'g手机',
+								url: 'dsdsdsd'
+							}
+						]
+					},
+					app: {
+						title: '移动产品',
+						list: [
+							{
+								name: '手机',
+								url: 'dsdsdsd'
+							}
+						]
+					}
+			},
+			MessageList: [
+				{
+					mt: '好好啊',
+					hot: 'hot',
+					url: 'dsadasdsadas'
+				},
+				{
+					mt: '好好啊',
+					hot: '',
+					url: 'dsadasdsadas'
+				},
+				{
+					mt: '好好啊',
+					hot: '',
+					url: 'dsadasdsadas'
+				}
+			]
 		}
 	}
 }
@@ -59,7 +99,7 @@ p {
 	width: 25%;
 	position: absolute;
 }
-.leftsidetop {
+.leftsidetop , .leftsidebutton {
 	margin:auto;
 	padding:15px;
 	border: 1px solid red;
@@ -67,7 +107,7 @@ p {
 	box-shadow: 10px 10px 5px green;
 	margin-bottom: 25px;
 }
-.leftsidetop>ul {
+ul {
 	list-style: none;
 	padding-left: 15px;
 }

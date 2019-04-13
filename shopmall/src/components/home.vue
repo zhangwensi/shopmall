@@ -48,6 +48,7 @@ export default {
 	height:50px;
 	bottom: 0px;
 	position: fixed;
+  line-height: 50px;
 	text-align: center;
 }
 .headerimg {
