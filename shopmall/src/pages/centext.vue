@@ -3,7 +3,7 @@
 		<div class="leftside">
 			<div class="leftsidetop">
 				<div v-for='product in Pdlist'>
-					<p>{{product.title}}</p>
+					<p class="pdsize">{{product.title}}</p>
 					<ul>
 						<li v-for='item in product.list'>
 							<a href="#">{{item.name}}</a>
@@ -25,10 +25,18 @@
 		</div>
 		<div class="rightside">
 			<div class="imgloop"></div>
-			<div class="rightsideli">
-				<ul>
-					<li></li>
-				</ul>
+			<div>
+				<div class="rightpd" v-for='item in Plist'>
+					<img src="item.img" alt="产品图片">
+					<ul>
+						<li>
+							<a href="#">{{item.title}}</a>
+						</li>
+						<li>
+							<p>{{item.interduce}}</p>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -79,6 +87,32 @@ export default {
 					hot: '',
 					url: 'dsadasdsadas'
 				}
+			],
+			Plist: [
+				{
+					title: '儿童玩具',
+					img: '#',
+					url: 'dsdsdsd',
+					interduce: '儿童玩具儿童玩具儿童玩具儿童玩具儿童玩具'
+				},
+				{
+					title: '生活日用品',
+					img: '#',
+					url: 'dsdsdsd',
+					interduce: '生活日用品生活日用品生活日用品生活日用品生活日用品'
+				},
+				{
+					title: '户外用品',
+					img: '#',
+					url: 'dsdsdsd',
+					interduce: '户外用品户外用品户外用品户外用品户外用品'
+				},
+				{
+					title: '床上用品',
+					img: '#',
+					url: 'dsdsdsd',
+					interduce: '床上用品床上用品床上用品床上用品床上用品床上用品'
+				}
 			]
 		}
 	}
@@ -124,10 +158,29 @@ ul {
 	width: 500px;
 	border: 1px solid black;
 }
-.rightsideli {
+.rightpd {
+	float: left;
+	margin-left: 25px;
+	margin-top: 50px;
+	height: 150px;
+	width: 350px;
+	border: 1px solid #999999;
 }
-.rightsideli>ul {
+.rightpd>img {
+	float: left;
+	background: green;
+	height: 140px;
+	width: 140px;
+	margin: 5px;
+}
+.rightpd>ul {
 	list-style: none;
-
+}
+.rightpd li {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.pdsize {
+	background: #98FB98;
 }
 </style>
