@@ -6,7 +6,7 @@
 					<p class="pdsize">{{product.title}}</p>
 					<ul>
 						<li v-for='item in product.list'>
-							<a href="#">{{item.name}}</a>
+							<router-link :to="item.url">{{item.name}}</router-link>
 						</li>
 					</ul>
 				</div>
@@ -24,7 +24,9 @@
 			</div>
 		</div>
 		<div class="rightside">
-			<div class="imgloop"></div>
+			<div class="imgloop">
+				<solider :imglist='imglist'></solider>
+			</div>
 			<div>
 				<div class="rightpd" v-for='item in Plist'>
 					<img src="item.img" alt="产品图片">
@@ -43,8 +45,12 @@
 </template>
 
 <script>
+import Solider from '../components/solider'
 export default {
 	name:"centext",
+	components :{
+		Solider
+	},
 	data () {
 		return {
 			Pdlist: {
@@ -53,11 +59,11 @@ export default {
 						list: [
 							{
 								name: '手机',
-								url: 'dsdsdsd'
+								url: 'mobile'
 							},
 							{
-								name: 'g手机',
-								url: 'dsdsdsd'
+								name: '其他电器',
+								url: ''
 							}
 						]
 					},
@@ -66,7 +72,7 @@ export default {
 						list: [
 							{
 								name: '手机',
-								url: 'dsdsdsd'
+								url: ''
 							}
 						]
 					}
@@ -113,7 +119,21 @@ export default {
 					url: 'dsdsdsd',
 					interduce: '床上用品床上用品床上用品床上用品床上用品床上用品'
 				}
-			]
+			],
+			imglist: [
+				{
+				title: '名称一',
+				src: require('../assets/login.jpg')
+				},
+				{
+				title: '名称二',
+				src: require('../assets/1.jpg')
+				},
+				{
+				title: '名称三',
+				src: require('../assets/2.jpg')
+				}
+			] 
 		}
 	}
 }
@@ -153,18 +173,17 @@ ul {
 	left: 25px;
 }
 .imgloop {
-	margin: auto;
-	height: 250px;
-	width: 500px;
-	border: 1px solid black;
+	margin: 0px 15px auto;
 }
 .rightpd {
 	float: left;
 	margin-left: 25px;
 	margin-top: 50px;
+	margin-bottom: 10px;
 	height: 150px;
 	width: 350px;
 	border: 1px solid #999999;
+	box-shadow: 10px 10px 5px #A1A1A1;
 }
 .rightpd>img {
 	float: left;
@@ -173,7 +192,7 @@ ul {
 	width: 140px;
 	margin: 5px;
 }
-.rightpd>ul {
+.rightpd ul {
 	list-style: none;
 }
 .rightpd li {

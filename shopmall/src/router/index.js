@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from '@/components/home'
 import Login from '@/components/Login'
 import centext from '@/pages/centext'
+import mobile from '@/pages/mobile'
 
 Vue.use(Router)
 
@@ -18,7 +19,8 @@ export default new Router({
       name: 'home',
       component: Home,
       children: [
-            { path: '/centext', component: centext, name: 'centext' }
+            { path: '/centext', component: centext, name: 'centext' },
+            { path: '/mobile', component: mobile, name: 'mobile' }
         ]
     }
   ]

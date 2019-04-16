@@ -9,7 +9,9 @@
   		</div>
   	</div>
   	<div class="context">
-  		<router-view></router-view>
+      <keep-alive>
+        <router-view></router-view>
+      </keep-alive>
   	</div>
   	<div class="footer">
   		<p>南京小米科技有限公司@LGT.LOG</p>
