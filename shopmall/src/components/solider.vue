@@ -1,7 +1,7 @@
 <template>
 	<el-carousel :interval="4000" type="card" height="250px">
 	  	<el-carousel-item v-for="(item ,index) in imgdata" :key="index">
-	  		<img :src="item.src">
+	  		<img :src="item.src" style="width: 378px;height: 250px">
 	    	<h3>{{ index+1 }}</h3>
 	    </el-carousel-item>
 	</el-carousel>
@@ -22,7 +22,7 @@ export default {
 	},
 	mounted () {
 		this.imgdata = this.imglist
-		console.log(this.imgdata)
+		// console.log(this.imgdata)
 	}
 }	
 </script>
